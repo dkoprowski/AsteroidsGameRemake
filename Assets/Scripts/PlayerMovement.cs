@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.UpArrow))
             MoveForward(MovementSpeed);
+
+        CheckPlayerPosition();
     }
 
     void Rotate(Direction direction)
@@ -40,5 +42,20 @@ public class PlayerMovement : MonoBehaviour {
     void MoveForward(float speed)
     {
         _rigidbody.AddForce(transform.up * speed, ForceMode2D.Force);
+    }
+    
+    void CheckPlayerPosition()
+    {
+        if (transform.localPosition.y > 7)
+            transform.localPosition = new Vector3(transform.localPosition.x, -6f, 0);
+
+        if (transform.localPosition.y < -7)
+            transform.localPosition = new Vector3(transform.localPosition.x, 6f, 0);
+
+        if (transform.localPosition.x > 10)
+            transform.localPosition = new Vector3(-9f, transform.localPosition.y, 0);
+
+        if (transform.localPosition.x < -10)
+            transform.localPosition = new Vector3(9f, transform.localPosition.y, 0);
     }
 }
