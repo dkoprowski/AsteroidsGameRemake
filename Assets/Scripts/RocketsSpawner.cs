@@ -22,7 +22,6 @@ public class RocketsSpawner : MonoBehaviour {
     {
 
         GameObject newRocket = Instantiate(prefab) as GameObject;
-        //  lasers.Add(enemy);
         newRocket.transform.SetParent(RocketsParent);
         newRocket.transform.position = transform.position;
         newRocket.transform.localEulerAngles = transform.localEulerAngles;
