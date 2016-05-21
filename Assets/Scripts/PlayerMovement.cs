@@ -9,10 +9,10 @@ public class PlayerMovement : MonoBehaviour {
 
     public float MovementSpeed;
     public float RotationSpeed;
-
+    private Rigidbody2D _rigidbody;
     // Use this for initialization
     void Start () {
-	
+        _rigidbody = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
@@ -39,6 +39,6 @@ public class PlayerMovement : MonoBehaviour {
 
     void MoveForward(float speed)
     {
-        gameObject.transform.localPosition += transform.up * speed * Time.deltaTime;
+        _rigidbody.AddForce(transform.up * speed, ForceMode2D.Force);
     }
 }
