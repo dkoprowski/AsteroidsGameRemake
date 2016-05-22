@@ -18,7 +18,7 @@ public class EnemiesSpawner : MonoBehaviour {
 
             CreateEnemy(EnemyPrefab);
 
-            nextSpawn += SpawnFrequency;
+            nextSpawn = Time.time + SpawnFrequency;
         }
     }
 
