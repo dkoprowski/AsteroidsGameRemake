@@ -3,6 +3,7 @@ using System.Collections;
 
 public class StraightMovement : MonoBehaviour {
     public float MovementSpeed;
+    public float OutOfBoundsDistance;
 	// Use this for initialization
 	void Start () {
 	
@@ -11,6 +12,9 @@ public class StraightMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         MoveForward(MovementSpeed);
+
+        if (Vector3.Distance(transform.position, Vector3.zero) > OutOfBoundsDistance)
+            Destroy(gameObject);
 	}
 
     void MoveForward(float speed)
