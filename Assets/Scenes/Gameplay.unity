@@ -758,6 +758,7 @@ GameObject:
   - 50: {fileID: 1634794430}
   - 58: {fileID: 1634794432}
   - 114: {fileID: 1634794431}
+  - 114: {fileID: 1634794433}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -862,6 +863,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: {fileID: 1413090548}
+  PlayerRestTime: 2
+  realRestTime: 0
 --- !u!58 &1634794432
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -876,6 +879,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
+--- !u!114 &1634794433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1634794425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95d05367d94e284d89a4241c48fe74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliderToCheck: {fileID: 1634794432}
+  spriteToBlink: {fileID: 1634794427}
+  blinkCycleTime: 0.15
 --- !u!1 &1635073363
 GameObject:
   m_ObjectHideFlags: 0
