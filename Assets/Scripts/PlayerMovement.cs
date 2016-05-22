@@ -10,9 +10,11 @@ public class PlayerMovement : MonoBehaviour {
     public float MovementSpeed;
     public float RotationSpeed;
     private Rigidbody2D _rigidbody;
+    private Camera _camera;
     // Use this for initialization
     void Start () {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _camera = FindObjectOfType<Camera>();
 	}
 	
 	// Update is called once per frame
@@ -46,16 +48,35 @@ public class PlayerMovement : MonoBehaviour {
     
     void CheckPlayerPosition()
     {
-        if (transform.localPosition.y > 7)
-            transform.localPosition = new Vector3(transform.localPosition.x, -6f, 0);
+        var extents = OrthographicExtents(_camera);
 
-        if (transform.localPosition.y < -7)
-            transform.localPosition = new Vector3(transform.localPosition.x, 6f, 0);
+        if (transform.localPosition.y > extents.y)
+            transform.localPosition = new Vector3(transform.localPosition.x, -extents.y, 0);
 
-        if (transform.localPosition.x > 10)
-            transform.localPosition = new Vector3(-9f, transform.localPosition.y, 0);
+        if (transform.localPosition.y < -extents.y)
+            transform.localPosition = new Vector3(transform.localPosition.x, extents.y, 0);
 
-        if (transform.localPosition.x < -10)
-            transform.localPosition = new Vector3(9f, transform.localPosition.y, 0);
+        if (transform.localPosition.x > extents.x)
+            transform.localPosition = new Vector3(-extents.x, transform.localPosition.y, 0);
+
+        if (transform.localPosition.x < -extents.x)
+            transform.localPosition = new Vector3(extents.x, transform.localPosition.y, 0);
+    }
+
+    private Vector2 OrthographicExtents(Camera camera)
+    {
+        /*
+        float screenAspect = (float)Screen.width / (float)Screen.height;
+        float cameraHeight = camera.orthographicSize * 2;
+        Bounds bounds = new Bounds(
+            camera.transform.position,
+            new Vector3(cameraHeight * screenAspect, cameraHeight, 0));
+        return bounds;
+        */
+
+        float height = 2f * camera.orthographicSize;
+        float width = height * camera.aspect;
+
+        return new Vector2(width / 2f, height / 2f);
     }
 }
