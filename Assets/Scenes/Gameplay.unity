@@ -298,6 +298,8 @@ MonoBehaviour:
   DirectionUpperLimit: 90
   DirectionBottomLimit: 0
   EnemyPrefab: {fileID: 143250, guid: 0c641b06a63fc2d478bdf7850f8a6872, type: 2}
+  EnemyPrefab2: {fileID: 139326, guid: 55301b2dec95d444696a37b4508fe092, type: 2}
+  EnemyPrefab3: {fileID: 150952, guid: 924d0dd31eba8d24ab1cd7877958336c, type: 2}
   EnemiesParent: {fileID: 503644906}
   SpawnFrequency: 5
 --- !u!1 &131279440
@@ -829,6 +831,8 @@ MonoBehaviour:
   DirectionUpperLimit: -100
   DirectionBottomLimit: -170
   EnemyPrefab: {fileID: 143250, guid: 0c641b06a63fc2d478bdf7850f8a6872, type: 2}
+  EnemyPrefab2: {fileID: 139326, guid: 55301b2dec95d444696a37b4508fe092, type: 2}
+  EnemyPrefab3: {fileID: 150952, guid: 924d0dd31eba8d24ab1cd7877958336c, type: 2}
   EnemiesParent: {fileID: 503644906}
   SpawnFrequency: 5
 --- !u!1 &772563723
@@ -1213,6 +1217,8 @@ MonoBehaviour:
   DirectionUpperLimit: 0
   DirectionBottomLimit: -90
   EnemyPrefab: {fileID: 143250, guid: 0c641b06a63fc2d478bdf7850f8a6872, type: 2}
+  EnemyPrefab2: {fileID: 139326, guid: 55301b2dec95d444696a37b4508fe092, type: 2}
+  EnemyPrefab3: {fileID: 150952, guid: 924d0dd31eba8d24ab1cd7877958336c, type: 2}
   EnemiesParent: {fileID: 503644906}
   SpawnFrequency: 5
 --- !u!1 &1352096223
@@ -1464,6 +1470,8 @@ MonoBehaviour:
   DirectionUpperLimit: 180
   DirectionBottomLimit: 90
   EnemyPrefab: {fileID: 143250, guid: 0c641b06a63fc2d478bdf7850f8a6872, type: 2}
+  EnemyPrefab2: {fileID: 139326, guid: 55301b2dec95d444696a37b4508fe092, type: 2}
+  EnemyPrefab3: {fileID: 150952, guid: 924d0dd31eba8d24ab1cd7877958336c, type: 2}
   EnemiesParent: {fileID: 503644906}
   SpawnFrequency: 5
 --- !u!1 &1634794425
