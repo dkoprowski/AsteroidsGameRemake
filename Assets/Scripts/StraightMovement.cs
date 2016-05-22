@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RocketMovement : MonoBehaviour {
-    public float RocketSpeed;
+public class StraightMovement : MonoBehaviour {
+    public float MovementSpeed;
 	// Use this for initialization
 	void Start () {
 	
@@ -10,7 +10,7 @@ public class RocketMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        MoveForward(RocketSpeed);
+        MoveForward(MovementSpeed);
 	}
 
     void MoveForward(float speed)
