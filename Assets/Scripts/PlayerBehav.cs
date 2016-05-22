@@ -44,4 +44,9 @@ public class PlayerBehav : MonoBehaviour {
         _rigidbody2D.angularVelocity = 0f;
         _collider2D.enabled = false;
     }
+
+    public void DisablePlayer()
+    {
+        gameObject.SetActive(false);
+    }
 }

@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60477308f452e2147ac7d2c521fd38f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: {fileID: 0}
+  pointsController: {fileID: 0}
 --- !u!114 &11468198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,7 +115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87db15ba6a4ea934d9fd808a43deec81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RocketSpeed: 1.5
+  MovementSpeed: 2
+  OutOfBoundsDistance: 20
 --- !u!212 &21207212
 SpriteRenderer:
   m_ObjectHideFlags: 1
