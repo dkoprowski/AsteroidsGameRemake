@@ -58,7 +58,6 @@ public class PointsController : MonoBehaviour {
     {
         if (NicknameInput.text.Length > 0)
         {
-            Debug.Log(PlayerPrefs.GetInt("Highscore"));
             if(PlayerPrefs.GetInt("Highscore", 0) < Points)
             {
                 PlayerPrefs.SetString("HighscoreNickname", NicknameInput.text);
