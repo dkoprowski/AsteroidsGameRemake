@@ -3,15 +3,16 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class MenuController : MonoBehaviour {
-    
+public class MenuController : MonoBehaviour
+{
     public Text HighscoreNickname;
     public Text Highscore;
-    // Use this for initialization
-    void Start () {
+
+    private void Start()
+    {
         LoadHighscore();
-	}
-	
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene("Gameplay");
@@ -22,9 +23,9 @@ public class MenuController : MonoBehaviour {
         var nickname = PlayerPrefs.GetString("HighscoreNickname");
         var score = PlayerPrefs.GetInt("Highscore");
 
-        if(nickname.Length > 0)
+        if (nickname.Length > 0)
         {
-            HighscoreNickname.text = nickname+":\t ";
+            HighscoreNickname.text = nickname + ":\t ";
             Highscore.text = score.ToString();
         }
         else

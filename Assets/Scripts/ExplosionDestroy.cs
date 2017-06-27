@@ -4,14 +4,14 @@ using System.Collections;
 public class ExplosionDestroy : MonoBehaviour {
 
     public float LifeTime = 2f;
-    private float CreateTime;
+    private float createTime;
 
 	void Start () {
-        CreateTime = Time.time;
+        createTime = Time.time;
 	}
 	
 	void Update () {
-        if (Time.time > CreateTime + LifeTime)
+        if (Time.time > createTime + LifeTime)
             Destroy(gameObject);
 	}
 }

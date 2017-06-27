@@ -2,8 +2,8 @@
 using System.Collections;
 using System;
 
-public class EnemiesSpawner : MonoBehaviour {
-   
+public class EnemiesSpawner : MonoBehaviour
+{
     public float DirectionUpperLimit;
     public float DirectionBottomLimit;
     public GameObject EnemyPrefab;
@@ -12,28 +12,27 @@ public class EnemiesSpawner : MonoBehaviour {
     public Transform EnemiesParent;
     public float SpawnFrequency;
     private float nextSpawn;
-    private UnityEngine.Random rand = new UnityEngine.Random();
-	// Update is called once per frame
-	void Update () {
+
+    private void Update()
+    {
         if (Time.time > nextSpawn)
         {
-
             CreateEnemy(RandomEnemy());
 
             nextSpawn = Time.time + SpawnFrequency;
         }
 
-        if(SpawnFrequency > 1f)
+        if (SpawnFrequency > 1f)
             SpawnFrequency = SpawnFrequency - (Time.deltaTime * 0.03f);
     }
 
     private void CreateEnemy(GameObject EnemyPrefab)
     {
-
         GameObject newEnemy = Instantiate(EnemyPrefab) as GameObject;
         newEnemy.transform.SetParent(EnemiesParent);
         newEnemy.transform.position = transform.position;
-        newEnemy.transform.localEulerAngles = new Vector3(0,0,UnityEngine.Random.Range(DirectionBottomLimit, DirectionUpperLimit));
+        newEnemy.transform.localEulerAngles = new Vector3(0, 0,
+            UnityEngine.Random.Range(DirectionBottomLimit, DirectionUpperLimit));
     }
 
     private GameObject RandomEnemy()

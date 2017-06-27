@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerBehav : MonoBehaviour {
-
+public class PlayerBehav : MonoBehaviour
+{
     public PointsController points;
+    public float PlayerRestTime;
+
     private Rigidbody2D _rigidbody2D;
     private Collider2D _collider2D;
-    public float PlayerRestTime;
-    public float realRestTime;
-    private void Start()
+    private float realRestTime;
+
+    private void Awake()
     {
         _rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
         _collider2D = gameObject.GetComponent<Collider2D>();
@@ -19,7 +21,7 @@ public class PlayerBehav : MonoBehaviour {
         if (!_collider2D.enabled)
         {
             realRestTime += Time.deltaTime;
-            if(realRestTime >= PlayerRestTime)
+            if (realRestTime >= PlayerRestTime)
             {
                 _collider2D.enabled = true;
             }
@@ -34,11 +36,11 @@ public class PlayerBehav : MonoBehaviour {
     {
         points.RemoveLife();
         RespawnPlayer();
-    }    
+    }
 
     private void RespawnPlayer()
     {
-        transform.localPosition = new Vector3(0,0,0);
+        transform.localPosition = new Vector3(0, 0, 0);
         transform.localEulerAngles = new Vector3(0, 0, 0);
         _rigidbody2D.velocity = new Vector2(0, 0);
         _rigidbody2D.angularVelocity = 0f;

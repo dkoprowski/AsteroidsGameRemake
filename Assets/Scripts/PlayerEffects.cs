@@ -2,10 +2,12 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class PlayerEffects : MonoBehaviour {
+public class PlayerEffects : MonoBehaviour
+{
+    [SerializeField] private SpriteRenderer effect1;
 
-    public SpriteRenderer effect1;
-	void Update () {
+    private void Update()
+    {
         if (Input.GetKey(KeyCode.UpArrow))
         {
             effect1.color = new Color(effect1.color.r, effect1.color.g, effect1.color.b, 1);

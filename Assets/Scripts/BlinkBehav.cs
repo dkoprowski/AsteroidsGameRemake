@@ -3,14 +3,11 @@ using System.Collections;
 
 public class BlinkBehav : MonoBehaviour
 {
-    public Collider2D colliderToCheck;
-    public SpriteRenderer spriteToBlink;
-    public float blinkCycleTime;
+    [SerializeField] private Collider2D colliderToCheck;
+    [SerializeField] private SpriteRenderer spriteToBlink;
+    [SerializeField] private float blinkCycleTime;
     private float nextBlink;
-    private void Start()
-    {
-        
-    }
+
     private void Update()
     {
         if (!colliderToCheck.enabled)
@@ -32,6 +29,7 @@ public class BlinkBehav : MonoBehaviour
 
     private void Blink()
     {
-        spriteToBlink.color = new Color(spriteToBlink.color.r, spriteToBlink.color.g, spriteToBlink.color.b, 1f - spriteToBlink.color.a);
+        spriteToBlink.color = new Color(spriteToBlink.color.r, spriteToBlink.color.g, spriteToBlink.color.b,
+            1f - spriteToBlink.color.a);
     }
 }
