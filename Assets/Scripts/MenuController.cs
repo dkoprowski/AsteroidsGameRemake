@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using Consts;
 
 public class MenuController : MonoBehaviour
 {
@@ -15,13 +16,13 @@ public class MenuController : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Gameplay");
+        SceneManager.LoadScene(Scenes.Main);
     }
 
     private void LoadHighscore()
     {
-        var nickname = PlayerPrefs.GetString("HighscoreNickname");
-        var score = PlayerPrefs.GetInt("Highscore");
+        var nickname = PlayerPrefs.GetString(Prefs.Nickname);
+        var score = PlayerPrefs.GetInt(Prefs.Score);
 
         if (nickname.Length > 0)
         {

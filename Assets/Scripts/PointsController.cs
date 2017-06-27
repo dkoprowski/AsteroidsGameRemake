@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using Consts;
 
 public class PointsController : MonoBehaviour
 {
@@ -60,10 +61,10 @@ public class PointsController : MonoBehaviour
     {
         if (NicknameInput.text.Length > 0)
         {
-            if (PlayerPrefs.GetInt("Highscore", 0) < Points)
+            if (PlayerPrefs.GetInt(Prefs.Score, 0) < Points)
             {
-                PlayerPrefs.SetString("HighscoreNickname", NicknameInput.text);
-                PlayerPrefs.SetInt("Highscore", Points);
+                PlayerPrefs.SetString(Prefs.Nickname, NicknameInput.text);
+                PlayerPrefs.SetInt(Prefs.Score, Points);
             }
 
             SceneManager.LoadScene(0);

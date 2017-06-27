@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerBehav : MonoBehaviour
 {
-    public PointsController points;
+    public PointsController Points;
     public float PlayerRestTime;
 
     private Rigidbody2D _rigidbody2D;
@@ -34,7 +34,7 @@ public class PlayerBehav : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        points.RemoveLife();
+        Points.RemoveLife();
         RespawnPlayer();
     }
 
